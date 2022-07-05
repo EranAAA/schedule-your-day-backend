@@ -10,17 +10,18 @@ module.exports = {
    update
 }
 
-async function query(filterBy) {
+async function query(userId) {
    try {
-      const criteria = _buildCriteria(filterBy)
-      const criteriaSort = _buildCriteriaSort(filterBy)
       const collection = await dbService.getCollection('schedule')
 
       var schedules = await collection
-         .find(criteria)
-         .sort(criteriaSort)
+         .find( { 'createdBy._id': ObjectId(userId) } )
          .toArray()
+
+      console.log('userId ', userId);
+      console.log('schedules length ', schedules.length);
       return schedules
+
    } catch (err) {
       logger.error('cannot find schedules', err)
       throw err
@@ -63,6 +64,8 @@ async function add(schedule) {
 async function update(schedule) {
    try {
       var id = ObjectId(schedule._id)
+      schedule.createdBy._id = ObjectId(schedule.createdBy._id)
+      
       delete schedule._id
       const collection = await dbService.getCollection('schedule')
       await collection.updateOne({ _id: id }, { $set: { ...schedule } })
@@ -71,48 +74,5 @@ async function update(schedule) {
       logger.error(`cannot update schedule ${scheduleId}`, err)
       throw err
    }
-}
-
-function _buildCriteria(filterBy) {
-  const criteria = {}
-  const selectedOption = filterBy.selectedOption
-    ? filterBy.selectedOption.map(({ value, ...rest }) => value)
-    : []
-
-  if (filterBy.name) {
-    criteria.name = { $regex: filterBy.name, $options: 'i' }
-  }
-
-  if (filterBy.stock || filterBy.stock === false) {
-    criteria.inStock = filterBy.stock
-  }
-
-  return criteria
-}
-
-function _buildCriteriaSort(filterBy) {
-  const criteria = {}
-
-  if (filterBy.sort === 'Higher') {
-    criteria.price = -1
-  }
-
-  if (filterBy.sort === 'Lower') {
-    criteria.price = 1
-  }
-
-  if (filterBy.sort === 'Newest') {
-    criteria.createdAt = -1
-  }
-
-  if (filterBy.sort === 'Oldest') {
-    criteria.createdAt = 1
-  }
-
-  if (!Object.keys(criteria).length) {
-    criteria.createdAt = -1
-  }
-
-  return criteria
 }
 

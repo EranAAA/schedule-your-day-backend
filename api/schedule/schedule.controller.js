@@ -12,8 +12,8 @@ module.exports = {
 async function getSchedules(req, res) {
    try {
       logger.debug('Getting Schedules')
-      var queryParams = req.query || {}
-      const schedules = await scheduleService.query(JSON.parse(queryParams.filterBy))
+      var { userId } = req.query || {}
+      const schedules = await scheduleService.query(userId)
       res.json(schedules)
    } catch (err) {
       logger.error('Failed to get schedules', err)
