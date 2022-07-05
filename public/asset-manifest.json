@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.234889ed.css",
+    "main.js": "/static/js/main.5a50b9eb.js",
+    "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/Roboto-Bold.ttf": "/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
+    "static/media/Livvic-Italic.ttf": "/static/media/Livvic-Italic.953ce820649d0c165483.ttf",
+    "static/media/Livvic-Bold.ttf": "/static/media/Livvic-Bold.089af19ac41ce144a96c.ttf",
+    "static/media/Livvic-Regular.ttf": "/static/media/Livvic-Regular.9994035d65e433690b4a.ttf",
+    "static/media/Livvic-Medium.ttf": "/static/media/Livvic-Medium.e1727d156b658481f5c4.ttf",
+    "service-worker.js": "/service-worker.js",
+    "index.html": "/index.html",
+    "main.234889ed.css.map": "/static/css/main.234889ed.css.map",
+    "main.5a50b9eb.js.map": "/static/js/main.5a50b9eb.js.map",
+    "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.234889ed.css",
+    "static/js/main.5a50b9eb.js"
+  ]
+}
