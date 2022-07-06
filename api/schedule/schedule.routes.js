@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.get('/', log, getSchedules)
 router.get('/:scheduleId', getScheduleById)
-router.post('/', /*requireAuth, requireAdmin,*/ addSchedule)
-router.put('/:scheduleId', /*requireAuth, requireAdmin,*/ updateSchedule)
-router.delete('/:scheduleId', /*requireAuth, requireAdmin,*/ removeSchedule)
+router.post('/', requireAuth, /*requireAdmin,*/ addSchedule)
+router.put('/:scheduleId', requireAuth, /*requireAdmin,*/ updateSchedule)
+router.delete('/:scheduleId', requireAuth, /*requireAdmin,*/ removeSchedule)
 
 module.exports = router

@@ -52,6 +52,7 @@ async function remove(scheduleId) {
 
 async function add(schedule) {
    try {
+      schedule.createdBy._id = ObjectId(schedule.createdBy._id)
       const collection = await dbService.getCollection('schedule')
       const addedSchedule = await collection.insertOne(schedule)
       return addedSchedule.ops[0]
