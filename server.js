@@ -5,6 +5,8 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const path = require('path')
 
+var cron = require('node-cron');
+
 const cookieParser = require('cookie-parser')
 
 const logger = require('./services/logger.service')
@@ -45,4 +47,18 @@ app.get('/**', (req, res) => {
 const port = process.env.PORT || 3030
 http.listen(port, () => {
    logger.info('Server is running on port: ' + port)
+   // cron.schedule('* * * * * *', () => {
+   //    console.log('Task submitted successfully');
+   // })
 })
+
+
+// # ┌────────────── second (optional)
+// # │ ┌──────────── minute
+// # │ │ ┌────────── hour
+// # │ │ │ ┌──────── day of month
+// # │ │ │ │ ┌────── month
+// # │ │ │ │ │ ┌──── day of week
+// # │ │ │ │ │ │
+// # │ │ │ │ │ │
+// # * * * * * *
