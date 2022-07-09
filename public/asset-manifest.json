@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d3ac285c.css",
-    "main.js": "/static/js/main.67b573ab.js",
+    "main.css": "/static/css/main.c9e54b50.css",
+    "main.js": "/static/js/main.193e99eb.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
     "static/media/Roboto-Bold.ttf": "/static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
     "static/media/Livvic-Italic.ttf": "/static/media/Livvic-Italic.953ce820649d0c165483.ttf",
@@ -13,12 +13,12 @@
     "static/media/login1.svg": "/static/media/login1.dc868702a0b3040957555c7d34a50592.svg",
     "static/media/home.svg": "/static/media/home.157c346f8f67dc7124f6588c10d69d5f.svg",
     "index.html": "/index.html",
-    "main.d3ac285c.css.map": "/static/css/main.d3ac285c.css.map",
-    "main.67b573ab.js.map": "/static/js/main.67b573ab.js.map",
+    "main.c9e54b50.css.map": "/static/css/main.c9e54b50.css.map",
+    "main.193e99eb.js.map": "/static/js/main.193e99eb.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3ac285c.css",
-    "static/js/main.67b573ab.js"
+    "static/css/main.c9e54b50.css",
+    "static/js/main.193e99eb.js"
   ]
 }
