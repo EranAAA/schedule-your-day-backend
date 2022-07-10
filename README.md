@@ -58,18 +58,3 @@
     <p > MongoDB: you have create database named: schedule_db and collection: user, schedule, notification </p>
      <br/>
  <br/>
-
-   <p align="left">Home page<p/>
-   <img src="./src/assets/imgs/1.png" alt="" />
- <br/>
-   <p align="left">Login/Signup page<p/>
-   <img src="./src/assets/imgs/2.png" alt="" />
-   <br/>
-   <p align="left">Main app<p/>
-   <img src="./src/assets/imgs/3.png" alt=""  />
-   <br/>
-   <p align="left">Edit your task<p/>
-   <img src="./src/assets/imgs/4.png" alt="" />
-   <br/>
-   <p align="left">Edit your notification<p/>
-   <img src="./src/assets/imgs/5.png" alt=""  />
