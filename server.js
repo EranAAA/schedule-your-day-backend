@@ -13,6 +13,7 @@ const logger = require('./services/logger.service')
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
 const scheduleRoutes = require('./api/schedule/schedule.routes')
+const notificationRoutes = require('./api/notification/notification.routes')
 const { setupSocketAPI } = require('./services/socket.service')
 
 // Express App Config
@@ -36,6 +37,7 @@ if (process.env.NODE_ENV === 'production') {
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/schedule', scheduleRoutes)
+app.use('/api/notification', notificationRoutes)
 
 setupSocketAPI(http)
 
