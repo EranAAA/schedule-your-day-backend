@@ -5,8 +5,6 @@ const http = require('http').createServer(app)
 const cors = require('cors')
 const path = require('path')
 
-var cron = require('node-cron');
-
 const cookieParser = require('cookie-parser')
 
 const logger = require('./services/logger.service')
@@ -14,7 +12,6 @@ const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
 const scheduleRoutes = require('./api/schedule/schedule.routes')
 const notificationRoutes = require('./api/notification/notification.routes')
-const { setupSocketAPI } = require('./services/socket.service')
 
 // Express App Config
 app.use(cookieParser())
@@ -39,8 +36,6 @@ app.use('/api/user', userRoutes)
 app.use('/api/schedule', scheduleRoutes)
 app.use('/api/notification', notificationRoutes)
 
-setupSocketAPI(http)
-
 // Last fallback
 app.get('/**', (req, res) => {
    res.sendFile(path.join(__dirname, 'public', 'index.html'))
@@ -49,18 +44,5 @@ app.get('/**', (req, res) => {
 const port = process.env.PORT || 3030
 http.listen(port, () => {
    logger.info('Server is running on port: ' + port)
-   // cron.schedule('* * * * * *', () => {
-   //    console.log('Task submitted successfully');
-   // })
+
 })
-
-
-// # ┌────────────── second (optional)
-// # │ ┌──────────── minute
-// # │ │ ┌────────── hour
-// # │ │ │ ┌──────── day of month
-// # │ │ │ │ ┌────── month
-// # │ │ │ │ │ ┌──── day of week
-// # │ │ │ │ │ │
-// # │ │ │ │ │ │
-// # * * * * * *
